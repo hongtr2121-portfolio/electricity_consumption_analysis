@@ -26,11 +26,11 @@ and forecast future energy usage to support data-driven decisions.
 4. **Dashboard** — Interactive Power BI report for management reporting
 
 ## Project Structure
-├── data/        # Raw and cleaned datasets
-├── notebooks/   # Python preprocessing notebooks
-├── dashboard/   # Power BI files
-├── images/      # Charts and result screenshots
-└── report/      # Final project report
+- `data/` — Raw and cleaned datasets
+- `notebooks/` — Python preprocessing notebooks
+- `dashboard/` — Power BI files
+- `images/` — Charts and result screenshots
+- `report/` — Final project report
 
 ## Author
 Tran Thuy Hong — Data Analyst & Developer
