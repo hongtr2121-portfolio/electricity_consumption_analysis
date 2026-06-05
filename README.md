@@ -74,7 +74,5 @@ Across 10-fold stratified cross-validation, **Random Forest** comprehensively ou
 ---
 
 ## 🖼️ 6. Dashboard Preview
-*(Insert your Power BI dashboard screenshots here to showcase your data viz skills!)*
-```markdown
-![Power BI Dashboard Overview](./images/dashboard_preview1.png)
-![Power BI Load Analysis](./images/dashboard_preview2.png)
+
+<img width="810" height="860" alt="image" src="https://github.com/user-attachments/assets/64f58114-c8d5-4ac4-9071-2eaf981a7e83" />
