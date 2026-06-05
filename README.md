@@ -1,4 +1,4 @@
-# ⚡ Steel Industry Energy Consumption Analysis & Forecasting
+#  Steel Industry Energy Consumption Analysis & Forecasting
 
 ## Overview
 Applied Business Intelligence and Predictive Modeling to analyze 
