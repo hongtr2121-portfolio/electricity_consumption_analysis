@@ -25,7 +25,14 @@ The steel industry is highly energy-intensive and contributes significantly to o
 * Excel
 
 ## Methodology
+## Dataset Source
 
+The dataset used in this project was obtained from Kaggle:
+
+- Steel Industry Energy Consumption Dataset
+- Source: https://www.kaggle.com/competitions/d-doan-l-ng-tieu-th-di-n-nang-usage-k-wh)
+
+The project focuses on data preprocessing, analysis, forecasting, and dashboard development conducted by the author.
 ### Data Preparation
 
 * Data cleaning
