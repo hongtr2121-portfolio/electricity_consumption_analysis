@@ -1,84 +1,81 @@
+# ⚡ Steel Industry Energy Consumption Analysis & Forecasting
 
-# Steel Energy Consumption Analysis & Forecasting
-## Overview
+## 👥 Authors (Group 8 - Business Intelligence)
+* **Trần Thúy Hồng** (Data Analyst / Developer)
+* **Huỳnh Hoàng Hải Yến**, **Nguyễn Thị Thanh Thảo**, **Trương Kim Đăng**, **Nguyễn Hương Thủy**
 
-This project analyzes electricity consumption patterns in the steel manufacturing industry and develops predictive models to forecast energy usage. The project combines Business Intelligence, Machine Learning, and Statistical Analysis techniques to support energy management and operational decision-making.
+---
 
-## Business Problem
+## 📌 1. Project Overview & Business Problem
+The steel manufacturing industry is highly energy-intensive, representing a massive portion of industrial operational costs and carbon emissions. This project applies **Business Intelligence (BI)** and **Predictive Modeling** to analyze electricity consumption patterns and forecast future energy usage ($Usage\_kWh$). 
 
-The steel industry is highly energy-intensive and contributes significantly to operational costs and CO₂ emissions. Accurate analysis and forecasting of electricity consumption can help organizations optimize energy usage and improve sustainability performance.
+By accurately predicting energy needs, data-driven decisions can be made to optimize production scheduling, reduce peak load demand, control operational costs, and actively mitigate environmental impact ($CO_2$ emissions).
 
-## Objectives
+## 🎯 2. Project Objectives
+* **Analyze:** Identify core factors and operational behaviors that heavily impact energy consumption.
+* **Classify:** Categorize production load types (`Light`, `Medium`, `Maximum`) using supervised Machine Learning algorithms.
+* **Forecast:** Develop a robust statistical forecasting model to predict electricity usage ($Usage\_kWh$).
+* **Decision Support:** Build interactive BI dashboards to help management monitor energy trends in real-time[cite: 2].
 
-* Analyze electricity consumption behavior
-* Identify factors affecting energy usage
-* Classify production load types
-* Forecast electricity consumption (Usage_kWh)
-* Develop interactive dashboards for decision support
+## 🛠️ 3. Tools & Technologies Used
+* **Data Preprocessing:** Python (Pandas, NumPy)[cite: 2]
+* **Business Intelligence & Dashboard:** Power BI[cite: 2]
+* **Machine Learning (Classification):** Orange Data Mining[cite: 2]
+* **Statistical Analysis & Forecasting:** R Programming (VScode environment)[cite: 2]
 
-## Tools & Technologies
+---
 
-* Power BI
-* Orange Data Mining
-* R
-* Python
-* Excel
+## 🔄 4. Methodology & Implementation
 
-## Methodology
-## Dataset Source
+### 📥 Data Preparation & ETL
+* **Source:** Kaggle (Steel Industry Energy Consumption Dataset)[cite: 2].
+* **Volume:** Initial dataset contained **28,032 rows and 20 columns**[cite: 2].
+* **Preprocessing (Python):** Checked for duplicates and handled missing values (confirmed clean/complete dataset)[cite: 2].
+* **Outlier Removal (R):** Applied the **IQR (Interquartile Range) method** to clean heavily skewed numerical distributions[cite: 2]. The dataset was filtered down to **20,384 rows** for stable modeling[cite: 2].
+* **Feature Engineering:** One-Hot encoding applied to categorical features (`WeekStatus`, `Day_of_week`, `Load_Type`)[cite: 2], and Z-score standardization applied to numerical features[cite: 2].
 
-The dataset used in this project was obtained from Kaggle:
+### 🤖 Machine Learning Load-Type Classification (Orange)
+We trained and evaluated four models to classify production loads (`Light`, `Medium`, `Maximum`)[cite: 2]:
+1. **Decision Tree**[cite: 2]
+2. **Support Vector Machine (SVM)**[cite: 2]
+3. **Logistic Regression**[cite: 2]
+4. **Random Forest**[cite: 2]
 
-- Steel Industry Energy Consumption Dataset
-- Source: https://www.kaggle.com/competitions/d-doan-l-ng-tieu-th-di-n-nang-usage-k-wh)
+### 📈 Statistical Forecasting Model (R)
+A **Multiple Linear Regression (MLR)** model was developed to forecast the exact $Usage\_kWh$ based on power factors, $CO_2$ emissions, normalized solar minutes (NSM), and load type categories[cite: 2]:
 
-The project focuses on data preprocessing, analysis, forecasting, and dashboard development conducted by the author.
-### Data Preparation
+$$\text{Usage\_kWh} = \beta_0 + \beta_1\cdot\text{CO2} + \beta_2\cdot\text{Lagging\_Reactive\_Power} + \beta_3\cdot\text{Leading\_Reactive\_Power} + \beta_4\cdot\text{NSM} + \dots + \epsilon$$
 
-* Data cleaning
-* Outlier detection
-* Feature engineering
-* Data transformation
+---
 
-### Business Intelligence Analysis
+## 📊 5. Key Findings & Model Performance
 
-* KPI monitoring
-* Electricity consumption trends
-* Load type analysis
-* CO₂ emission analysis
+### 💡 Business Intelligence Insights (Power BI)
+* **The Energy-Carbon Link:** Electricity consumption shares a near-perfect positive correlation with carbon emissions (**$r = 0.99$**)[cite: 2]. Reducing energy use by 1% directly saves $3.21\text{ tCO}_2$[cite: 2].
+* **Temporal Patterns:** **87% of total electricity** is consumed during weekdays (Monday to Friday), leaving weekends (13%) as prime opportunities for system maintenance and energy-saving tests[cite: 2].
+* **Reactive Power Impact:** Lagging Current Reactive Power heavily affects efficiency (**$r = 0.90$**)[cite: 2]. Implementing proper power factor correction can optimize $5\% - 8\%$ of energy loss[cite: 2].
 
-### Machine Learning
+### 🤖 Machine Learning Evaluation Metrics
+Across 10-fold stratified cross-validation, **Random Forest** comprehensively outperformed the other models[cite: 2]:
 
-* Decision Tree
-* Random Forest
-* Logistic Regression
-* Support Vector Machine
+| Model | AUC | Classification Accuracy (CA) | F1-Score | Precision | Recall |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Random Forest** | **0.985** | **0.918** | **0.918** | **0.918** | **0.918** |
+| Decision Tree | 0.932 | 0.901 | 0.901 | 0.901 | 0.901 |
+| Logistic Regression | 0.917 | 0.787 | 0.786 | 0.791 | 0.787 |
+| SVM | 0.782 | 0.689 | 0.669 | 0.662 | 0.689 |
 
-### Forecasting
+> **Conclusion:** Random Forest provides highly robust, accurate, and stable classification for factory load management[cite: 2].
 
-* Multiple Linear Regression
+### 📉 Forecasting Accuracy
+* The statistical forecasting model achieved an outstanding **R-squared value of 0.9746 (97.49% accuracy)**[cite: 2].
+* The model's residuals tightly centered around 0 with a near-normal distribution, confirming predictive reliability[cite: 2].
+* Forecasted outputs were successfully converted back from Z-scores to original **kWh scales** to be fully ready for management reporting[cite: 2].
 
-## Key Findings
+---
 
-* Electricity consumption is strongly correlated with CO₂ emissions.
-* Weekday operations account for the majority of electricity usage.
-* Random Forest achieved the best classification performance.
-* The forecasting model achieved high predictive accuracy with an R² value of approximately 0.97.
-
-## Dashboard Preview
-
-Add dashboard screenshots here.
-
-## Repository Structure
-
-/data – dataset
-
-/notebooks – preprocessing and analysis
-
-/forecasting – prediction models
-
-/dashboard – Power BI dashboard
-
-/images – project screenshots
-
-/report – final report
+## 🖼️ 6. Dashboard Preview
+*(Insert your Power BI dashboard screenshots here to showcase your data viz skills!)*
+```markdown
+![Power BI Dashboard Overview](./images/dashboard_preview1.png)
+![Power BI Load Analysis](./images/dashboard_preview2.png)
