@@ -44,10 +44,8 @@ We trained and evaluated four models to classify production loads (`Light`, `Med
 ### 📈 Statistical Forecasting Model (R)
 A **Multiple Linear Regression (MLR)** model was developed to forecast the exact $Usage\_kWh$ based on power factors, $CO_2$ emissions, normalized solar minutes (NSM), and load type categories[cite: 2]:
 
-```text
 Usage_kWh = β0 + β1*(CO2) + β2*(Lagging_Reactive_Power) + β3*(Leading_Reactive_Power) + β4*(NSM) + ε
 
----
 
 ## 📊 5. Key Findings & Model Performance
 
